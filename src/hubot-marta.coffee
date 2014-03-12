@@ -32,7 +32,7 @@ dirMap =
   W: 'west'
 
 module.exports = (robot) ->
-  robot.hear /^!train (headed (\w+) )?(on (\w+) )?(bound for ([\w ]+) )?for (.+)$/, (msg) ->
+  robot.hear /^!train (headed (\w+) )?(on (\w+) )?(bound for ([\w ]+) )?(?:for|from) (.+)$/, (msg) ->
     getArrivals (err)->
       if err
         msg.send err
