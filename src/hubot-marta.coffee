@@ -45,8 +45,10 @@ module.exports = (robot) ->
       )
       train = trains.shift()
       if train
+        arrival_text = "will arrive"
+        arrival_text = "started boarding" if train.WAITING_TIME == 'Boarding'
         direction = dirMap[train.DIRECTION]
         next_arrival = moment().add(parseInt(train.WAITING_SECONDS),'seconds')
-        msg.send "#{direction}bound #{train.LINE.toLowerCase()} train will arrive at #{train.STATION} #{next_arrival.fromNow()}"
+        msg.send "#{direction}bound #{train.LINE.toLowerCase()} train #{arrival_text} at #{train.STATION} #{next_arrival.fromNow()}"
       else
         msg.send "no train match :("
