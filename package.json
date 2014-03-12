@@ -1,0 +1,37 @@
+{
+  "name": "hubot-marta",
+  "description": "A utility hubot script for checking marta related information, using their open APIs.",
+  "version": "0.0.1",
+  "author": "Jake Swanson <jakswa@gmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "hubot",
+    "public transit",
+    "transit",
+    "marta",
+    "hubot-scripts"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jakswa/hubot-marta.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jakswa/hubot-marta/issues"
+  },
+  "dependencies": {
+    "coffee-script": "~1.6",
+    "underscore": "~1.6.0",
+    "moment": "~2.5.1",
+    "request": "~2.34.0"
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "chai": "*",
+    "sinon-chai": "*",
+    "sinon": "*"
+  },
+  "main": "index.coffee",
+  "scripts": {
+    "test": "script/test"
+  }
+}
