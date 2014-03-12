@@ -35,4 +35,6 @@ Hubot> northbound gold train will arrive at CHAMBLEE STATION in 7 minutes
 
 ## Installation
 
-Add the package `hubot-marta` as a dependency in your Hubot package.json file. Then add `hubot-marta` to the list in the `external-scripts.json` file.
+- Set the `MARTA_API_KEY` to the API key that marta sent you (apply for one [here](http://www.itsmarta.com/developers/data-sources/marta-rail-realtime-restful-api.aspx))
+- Add the package `hubot-marta` as a dependency in your Hubot package.json file.
+- Add `hubot-marta` to the list in the `external-scripts.json` file.
