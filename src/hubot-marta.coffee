@@ -25,6 +25,11 @@ filterArrivals = (opts={}) ->
   filtered = _.filter(filtered, (arrival) -> arrival.STATION.match(stationRegex)) if opts.station
   filtered
 
+dirMap =
+  S: 'south'
+  E: 'east'
+  N: 'north'
+  W: 'west'
 
 module.exports = (robot) ->
   robot.hear /^!train (headed (\w+) )?(on (\w+) )?(bound for ([\w ]+) )?for (.+)$/, (msg) ->
@@ -40,7 +45,8 @@ module.exports = (robot) ->
       )
       train = trains.shift()
       if train
+        direction = dirMap[train.DIRECTION]
         next_arrival = moment().add(parseInt(train.WAITING_SECONDS),'seconds')
-        msg.send "train id #{train.TRAIN_ID} will arrive at #{train.STATION} #{next_arrival.fromNow()}"
+        msg.send "#{direction}bound #{train.LINE.toLowerCase()} train will arrive at #{train.STATION} #{next_arrival.fromNow()}"
       else
         msg.send "no train match :("

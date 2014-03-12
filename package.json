@@ -1,7 +1,7 @@
 {
   "name": "hubot-marta",
   "description": "A utility hubot script for checking marta related information, using their open APIs.",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": "Jake Swanson <jakswa@gmail.com>",
   "license": "MIT",
   "keywords": [
