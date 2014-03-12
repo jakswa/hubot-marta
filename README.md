@@ -32,6 +32,23 @@ Hubot> northbound gold train will arrive at CHAMBLEE STATION in 7 minutes
 
 - A train stopped at its final destination (like doraville or north springs) will not "switch directions" in the API until it leaves. So you'll only see northbound trains for north springs (`!train for north springs`), and you'll only see southbound trains for airport (`!train for airport`). Same for the east/west extremes.
 - The API currently doesn't give estimates for trains about to change directions. If a train leaves chamblee, and it's next stop is doraville, there won't be an estimate for when that train turns around and hits chamblee again. Because of this, you'll find certain filters usually yield no results, like `!train headed south for chamblee`. A workaround is to watch the northbound train that is about to switch directions: `!train headed north for doraville`.
+- The train API is new, and is bound to change on me. The script is tied to the current API response, which is a list of arrivals:
+
+```json
+[{
+  DESTINATION: "Airport",
+  DIRECTION: "S",
+  EVENT_TIME: "3/12/2014 5:40:28 PM",
+  LINE: "RED",
+  NEXT_ARR: "05:40:37 PM",
+  STATION: "WEST END STATION",
+  TRAIN_ID: "403506",
+  WAITING_SECONDS: "-37",
+  WAITING_TIME: "Boarding"
+},
+...
+]
+```
 
 ## Installation
 
